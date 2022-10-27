@@ -1,11 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gpimenta <gpimenta@student.42lisboa.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/24 17:45:48 by gpimenta          #+#    #+#             */
+/*   Updated: 2022/10/24 17:46:37 by gpimenta         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-/*#include <stdlib.h>
-#include <stdio.h>*/
 
 int	ft_lstsize(t_list *lst)
 {
 	unsigned int	count;
-	
+
 	count = 0;
 	while (lst)
 	{

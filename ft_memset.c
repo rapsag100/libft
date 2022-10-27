@@ -1,8 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gpimenta <gpimenta@student.42lisboa.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/24 14:42:20 by gpimenta          #+#    #+#             */
+/*   Updated: 2022/10/24 14:42:26 by gpimenta         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-/*#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
-*/
 
 void	*ft_memset(void *b, int c, size_t len)
 {

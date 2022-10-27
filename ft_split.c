@@ -1,12 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gpimenta <gpimenta@student.42lisboa.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/24 14:55:16 by gpimenta          #+#    #+#             */
+/*   Updated: 2022/10/24 18:29:07 by gpimenta         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-/*#include <stdlib.h>
-#include <stdio.h>*/
 
 int	ft_count(char const *s, char c)
 {
 	size_t	i;
 	size_t	count;
-	int	p;
+	int		p;
 
 	i = 0;
 	p = 1;
@@ -34,17 +44,36 @@ int	ft_countletter(char const *s1, char c)
 		i++;
 	return (i);
 }
-	
+
+char	*ft_string(char **array, char const *s, int *i, char c)
+{
+	int		a;
+	char	*str;
+
+	a = 0;
+	str = malloc(sizeof(char) * (ft_countletter(s + *i, c) + 1));
+	if (!array)
+		return (NULL);
+	while (s[*i] != c && s[*i])
+	{
+		str[a] = s[*i];
+		a++;
+		(*i)++;
+	}
+	str[a] = '\0';
+	return (str);
+}
+
 char	**ft_split(char const *s, char c)
 {
-	size_t	i;
-	size_t	a;
-	size_t	d;
+	int		d;
+	int		i;
 	char	**array;
-	
-	i = 0;
+
 	d = 0;
-	if (!(array = (char **)malloc(sizeof(char *) * (ft_count(s, c) + 1))) || !s)
+	i = 0;
+	array = (char **)malloc(sizeof(char *) * (ft_count(s, c) + 1));
+	if (!array)
 		return (NULL);
 	while (s[i])
 	{
@@ -52,12 +81,8 @@ char	**ft_split(char const *s, char c)
 			i++;
 		if (s[i])
 		{
-			if (!(array[d] = malloc(sizeof(char) * (ft_countletter(s + i, c) + 1))))
-				return (NULL);
-			a = 0;
-			while (s[i] != c && s[i])
-				array[d][a++] = s[i++];
-			array[d++][a] = '\0';
+			array[d] = ft_string(array, s, &i, c);
+			d++;
 		}
 	}
 	array[d] = 0;
@@ -70,6 +95,7 @@ int main(void)
 	char **splt;
 	int	i;
 
+	i = 0;
 	splt = ft_split(str, '*');
 	while (splt[i])
 	{
