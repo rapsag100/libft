@@ -6,7 +6,7 @@
 /*   By: gpimenta <gpimenta@student.42lisboa.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 14:42:36 by gpimenta          #+#    #+#             */
-/*   Updated: 2022/10/24 19:32:25 by gpimenta         ###   ########.fr       */
+/*   Updated: 2022/10/27 19:54:17 by gpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strrchr(const char *s, int c)
 	i = 0;
 	while (s[i])
 		i++;
-	if (c == 0)
+	if ((char)c == '\0')
 		return ((char *)(s + i));
 	i--;
 	while (i >= 0)

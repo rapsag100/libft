@@ -6,7 +6,7 @@
 /*   By: gpimenta <gpimenta@student.42lisboa.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 14:40:42 by gpimenta          #+#    #+#             */
-/*   Updated: 2022/10/24 19:59:00 by gpimenta         ###   ########.fr       */
+/*   Updated: 2022/10/27 19:03:15 by gpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	current = *lst;
 	while (current->next != 0)
 		current = current->next;
-	new->next = current->next;
 	current->next = new;
 }
 /*

@@ -6,7 +6,7 @@
 /*   By: gpimenta <gpimenta@student.42lisboa.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 14:46:26 by gpimenta          #+#    #+#             */
-/*   Updated: 2022/10/24 19:31:06 by gpimenta         ###   ########.fr       */
+/*   Updated: 2022/10/27 19:58:34 by gpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)(s + i));
 		i++;
 	}
-	if (c == '\0')
+	if ((char)c == '\0')
 		return ((char *)(s + i));
 	return (NULL);
 }
