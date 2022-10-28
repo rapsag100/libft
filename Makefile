@@ -58,10 +58,10 @@ CFLAGS = -Wall -Wextra -Werror
 
 RM = rm -f
 
+all: $(NAME)
+
 $(NAME): $(OBJECTS)
 	ar rc $(NAME) $(OBJECTS)
-
-all: $(NAME)
 
 bonus: all $(OBJECTS_BON)
 	ar rc $(NAME) $(OBJECTS_BON)
